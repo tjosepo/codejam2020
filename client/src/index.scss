@@ -1,0 +1,13 @@
+$theme-colors: ("primary": #FFFA0C);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: #28282A;
+  color: white;
+}

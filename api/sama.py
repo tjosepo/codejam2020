@@ -1,3 +1,4 @@
+from os import path
 from api.db import get_db
 import json
 import requests
@@ -12,6 +13,7 @@ import os
 from flask import current_app, g
 from flask.cli import with_appcontext
 from . import db
+import shutil
 
 
 class ImageByteEncoder:
@@ -101,6 +103,10 @@ def classify_images():
     img_dir = "./images/"
     files = os.listdir(img_dir)
     for file in files:
+        # Check if file is in cdn
+        if path.exists(f'./api/cdn/{file}') is False:
+            shutil.copy(f'./images/{file}', f'./api/cdn/{file}')
+
         # Check if image is already in db
         if db.execute('SELECT id FROM image WHERE file = ?', (file,)).fetchone() is not None:
             continue

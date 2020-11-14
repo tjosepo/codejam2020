@@ -1,13 +1,19 @@
 import functools
 
 from flask import Blueprint
+from flask.helpers import send_file
 from flask.json import jsonify
 from api.db import get_db
 
 bp = Blueprint('api', __name__)
 
 
-@bp.route('/<string:type>', methods=('GET', 'POST'))
+@bp.route('/cdn/<string:filename>', methods=['GET'])
+def static(filename):
+    return send_file(f'cdn/{filename}', mimetype='image/jpg')
+
+
+@bp.route('/query/<string:type>', methods=['GET'])
 def query_type(type):
     db = get_db()
     images = None
