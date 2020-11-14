@@ -112,7 +112,11 @@ def classify_images():
 
         # Add image to db
         db.execute(
-            'INSERT INTO image (file, id_to_class) VALUES (?, ?)', (file, str(id_to_class)))
+            'INSERT INTO image (file, shirt, top, sweater, cardigan, jacket, vest, pants, shorts, skirt, coat, dress, jumpsuit, cape, glasses, hat, headband, tie, glove, watch, belt, sock, shoe, bag, scarf, hood) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+            (file, '1' in id_to_class, '2' in id_to_class, '3' in id_to_class, '4' in id_to_class, '5' in id_to_class, '6' in id_to_class, '7' in id_to_class, '8' in id_to_class, '9' in id_to_class, '10' in id_to_class, '11' in id_to_class,
+             '12' in id_to_class, '13' in id_to_class, '14' in id_to_class, '15' in id_to_class, '16' in id_to_class, '17' in id_to_class, '18' in id_to_class, '19' in id_to_class,  '20' in id_to_class,  '23' in id_to_class,
+             '24' in id_to_class,  '25' in id_to_class, '26' in id_to_class,  '28' in id_to_class)
+        )
         db.commit()
 
 
