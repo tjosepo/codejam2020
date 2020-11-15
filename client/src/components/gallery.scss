@@ -1,0 +1,60 @@
+.Gallery {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+
+        button {
+            display: block;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 0;
+            height: 100%;
+            transition: 0.1s ease-in-out;
+
+            &:hover {
+                transform: scale(1.01);
+            }
+        }
+
+        img {
+            max-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.modal {
+    color: black;
+
+    &-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    label {
+        display: block;
+        border: 1px solid black;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: #ececec;
+        }
+    }
+
+    input[type='radio']:checked+label {
+        background-color: #cccccc;
+        font-weight: bold;
+        box-shadow: inset 0px 0px 0 1px;
+    }
+}

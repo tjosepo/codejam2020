@@ -1,5 +1,7 @@
 const host = 'http://127.0.0.1:5000/';
-export const GET = (type: string) => `${host}/query/${type}`;
+export const SEARCH = (type: string) => `${host}/query/${type}`;
+export const CDN = (filename: string) => `${host}/cdn/${filename}`;
+export const INC = (id: number, type: string) => `${host}/inc/${id}/${type}`;
 
 export const types = [
     'shirt',

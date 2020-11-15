@@ -6,7 +6,7 @@ export default function Navigation() {
         <nav className="Navigation">
             <div className="nav-logo container">
                 <img src="/logo.svg" alt="Logo" />
-                <span className="text-primary">samashop</span>
+                <span className="text-primary">fashion gallery</span>
             </div>
         </nav>
     )
